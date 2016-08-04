@@ -96,7 +96,7 @@ import java.util.Iterator;
                 Bitmap bitmap = drawableToBitMap(largeIcon.loadDrawable(getContext()));
                 if (bitmap != null) {
                     android.graphics.drawable.Icon newIcon = android.graphics.drawable.Icon.createWithBitmap(bitmap);
-                    Reflect.on(notification).call("mLargeIcon", newIcon);
+                    Reflect.on(notification).set("mLargeIcon", newIcon);
                 }
             }
         }

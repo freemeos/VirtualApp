@@ -19,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 public class NotificationHandler {
     private static final String TAG = NotificationHandler.class.getSimpleName();
     /** 双开不处理 */
-    public static boolean DOPEN_NOT_DEAL = false;
+    public static boolean DOPEN_NOT_DEAL = true;
     /** 系统样式的通知栏不处理 */
     public static boolean SYSTEM_NOTIFICATION_NOT_DEAL = false;
     /** 没有处理 */
