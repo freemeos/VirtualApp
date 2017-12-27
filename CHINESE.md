@@ -1,27 +1,69 @@
-[![VA banner](https://raw.githubusercontent.com/asLody/VirtualApp/master/banner.png)](https://github.com/asLody/VirtualApp)
+[![VA banner](https://raw.githubusercontent.com/asLody/VirtualApp/master/Logo.png)](https://github.com/asLody/VirtualApp)
 
-
-给`微商双开神器`的警告
-----------------------
-经过验证发现，`微商双开神器`将VirtualApp的`演示App`的界面改为绿色，并添加`微信支付`（售价28元），
-广州市比目网络科技有限公司的这一敛财行为，严重侵害了作者的利益。请在1个月内下架你们的产品。
-再次申明，VA可以使用于商业项目中，但这种赤裸裸的敛财行为，是严格禁止的。
-
-
-关于
+简介
 ---
-**VirtualApp**是一个**App虚拟引擎**的完整实现（简称`VA`）。
-VirtualApp允许你在App内创建一个虚拟空间，你可以在虚拟空间内任意的`安装`、`启动`和`卸载`APK，这一切都与外部隔离，就如同一个`沙盒`。
+**VirtualApp**是一个**App虚拟化引擎**（简称`VA`）。
+
+**VirtualApp已兼容Android 0(8.0 Preview)。**
+
+VirtualApp在你的App内创建一个`虚拟空间`，你可以在虚拟空间内任意的`安装`、`启动`和`卸载`APK，这一切都与外部隔离，如同一个`沙盒`。
 
 运行在`VA`中的APK无需在外部安装，即VA支持**免安装运行APK**。
 
+VA目前被广泛应用于双开/多开、应用市场、模拟定位、一键改机、隐私保护、游戏修改、自动化测试、无感知热更新等技术领域，但它决不仅限于此，Android本身就是一个极其开放的平台，免安装运行APK这一Feature打开了无限可能--------这都取决于您的想象力。
 
-讨论技术话题
+申明
+---
+VirtualApp开放源代码只能用于个人技术研究和开拓思路。当您需要将VirtualApp用于商业用途时，请务必联系QQ：10890 购买商业授权。您如果未经授权将VirtualApp的代码作为您自己的代码用于商业牟利、内部使用或上传软件市场，我们将直接报警（侵犯著作权罪）。
+
+购买商业授权是对我们最大的支持和认可，同时也为您节省了大量的开发完善时间，保障您的产品可以高效的上线运营，让您有更多的时间去创新和盈利。作为购买商业授权的回报，您可以获得说明文档、未开放的商业版和专人1vs1对接项目（全年24小时随时微信群、QQ群、电话等1vs1负责制，保证响应时间。包括：接入对接、BUG解决、技术解答、运营建议、同行非保密运营信息分享（营收、经验、推广、弯路）、涉足行业预警）！同时我们也支持基于VirtualApp的订制开发，请联系：QQ：10890 洽谈。
+
+请注意
+-----
+VirtualApp代码的更新频率非常快（`以小时为单位`），每一次代码的更新都有可能修复重大BUG，所以请 `watch` 本项目，并注意随时更新代码，以免给您带来损失！
+
+
+已支持的加固(不断更新)
+----------
+* 360加固
+* 腾讯加固
+* 梆梆加固
+* 梆梆企业版(12306客户端 Pass)
+* 爱加密
+* 百度加固
+* 娜迦加固
+* 乐变加固
+* 网易易盾
+* 通付盾
+* (已支持的加固均可通过VA来脱壳，本技术不公开)
+
+
+在VA使用Google服务
+-----------
+VA支持运行官方的Google服务套件，同时我们也提供了对`MicroG`的支持。
+
+您可以通过在VA中安装`MicroG`来支持`Google服务`，
+
+这样，即使外部没有Google服务，用户也可以在VA中享受Google服务。
+
+MicroG套件可在此下载：[Download MicroG](https://microg.org/download.html)
+
+MicroG的必要模块：
+* Services Core
+* Services Framework Proxy
+* Store
+
+如果您需要在VA中使用官方的Google服务套件（外部已安装的前提下），
+
+则可以通过 `GmsSupport.installGms(userId)` 来安装。
+
+##### 注意，您不能同时安装MicroGms和官方的Gms。
+
+
+使用说明
 ----------
 
-1. 将你的Host和Plugins需要的**所有权限**加入到你的`AndroidManifest.xml`.
-
-2. 前往你的Application并添加如下代码:
+**前往你的Application并添加如下代码:**
 ```java
     @Override
     protected void attachBaseContext(Context base) {
@@ -33,38 +75,23 @@ VirtualApp允许你在App内创建一个虚拟空间，你可以在虚拟空间�
         }
     }
 ```
-
-3. For **Install a virtual App**, use this function:
+**安装App:**
 ```java
     VirtualCore.getCore().installApp({APK PATH}, flags);
 ```
-
-4. For **Launch a virtual App**, use this function:
+**启动App:**
 ```java
     VirtualCore.getCore().launchApp({PackageName});
 ```
-
-5. For **uninstall a virtual App**, use this function:
+**移除App:**
 ```java
     VirtualCore.getCore().uninstallApp({PackageName});
 ```
-
-6. If you need to get the `details of App`, use this function:
+**该App的基本信息:**
 ```java
     VirtualCore.getCore().findApp({PackageName});
 ```
 
-
-文档
--------------
-
-VirtualApp 目前暂时**没有文档**，Please read the fucking source code。
-
-License
--------
-LGPL 3.0
-
-关于Author
+技术支持
 ------------
-
-    Lody (imlody@foxmail.com)
+QQ群：598536
